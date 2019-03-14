@@ -1,0 +1,16 @@
+version: '3'
+services:
+  db:
+    image: apache/couchdb:latest
+    expose:
+      - "5984"
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=password
+    ports:
+      - "127.0.0.1:5984:5984"
+  tabcat:
+    build: .
+    environment:
+      - COUCHDB_URL=db:5984
+      - ADMIN=admin:password
