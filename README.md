@@ -40,6 +40,7 @@ docker-compose up -d
 ```
 
 Some additional setup required from within the tabcat service defined in docker-compose.yml
+TODO - Make this part of image definition but currently prompts for user input.
 
 ```
 docker-compose run tabcat
