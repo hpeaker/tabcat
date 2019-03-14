@@ -33,6 +33,24 @@ vagrant up
 ```sh
 sudo couchdb -b
 ``` 
+### Docker
+
+```
+docker-compose up -d
+```
+
+Some additional setup required from within the tabcat service defined in docker-compose.yml
+
+```
+docker-compose run tabcat
+bash setup2_count.sh
+export TABCAT_HOST=http://tabcat:$(cat .tabcat_password)@db:5984
+
+make
+```
+The tabcat app should then be available at localhost:5984/tabcat/\_design/console/tasks.html
+Login with s@ndbox user.
+
 
 ### Dependencies
 
